@@ -20,12 +20,7 @@ function copyFunc(){
     
     navigator.clipboard.writeText(textToCopy).then(() => {
         //show message when copying is successful
-        cpyResult.innerHTML = '<i style="font-size: .8em; font-weight:bold;">Copied!</i>';
-                
-        // Revert back to the original  after 2 seconds
-        setTimeout(() => {
-            cpyResult.innerHTML = ''
-        }, 2000);
+
     }).catch(err => {
         // if an error occurs
         console.log('Failed to copy: ', err);

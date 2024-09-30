@@ -53,12 +53,7 @@ require('config.php');
 
                 <a class="cta" href="#">Let's Connect</a>
                 
-                <!-- <div>
-                    <div class="cta" href="#">
-                        <input id="textToCopy" type="text" class="cta" value="opesam42@gmail.com" readonly /><span class="copy" id="copyBtn"><i class="fa fa-regular fa-copy fa-lg"></i></span>
-                    </div><br>
-                    <div class="copied"></div>
-                </div> -->
+                
                 <!-- <div class="tools">
                     <img src="assets/devicon_figma.svg" alt="figma" width="48px">
                     <img src="assets/html-icon.svg" alt="html" width="48px">

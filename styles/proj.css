@@ -46,3 +46,36 @@ main h2, main h3{
 p{
     margin-bottom: 2em;
 }
+
+
+form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+label{
+    display: block;
+}
+input, textarea{
+    width: 100%;
+    background-color: transparent;
+    border: .5px solid var(--sub-black);
+    border-radius: .2em;
+    font-family: inherit;
+    font-size: inherit;
+}
+input{
+    /* height: 1.8em; */
+
+}
+textarea{
+    height: 6em;
+}
+input[type='submit']{
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1em;
+}

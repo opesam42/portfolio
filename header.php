@@ -32,7 +32,7 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
 
         <?php
-        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' ) {
+        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'contact.php' ) {
             echo "<link rel='stylesheet' href='styles/proj.css' />";
         }
         ?>
