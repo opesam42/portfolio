@@ -6,14 +6,14 @@ $validproj = null; // initialize to prevent error
 //validate php
 if(isset($_GET['id'])){
     if(!is_numeric($_GET['id']) || $_GET['id'] <= 0){
-        // header("Location: " . $config_basedir . "404.php");
-        // exit();
+        header("Location: " . $config_basedir . "404.php");
+        exit();
     }else{
         $validproj = intval( $_GET['id'] );
     }
 } else{
     // if no id is provided, place a blank form for adding new project
-    // header("Location: " . $config_basedir . "add.php");
+    header("Location: " . $config_basedir . "add.php");
 }
 
 
