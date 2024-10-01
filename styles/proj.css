@@ -99,6 +99,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     transition: var(--transition1)
 }
 
+
 textarea{
     height: 6em;
 }
@@ -121,6 +122,14 @@ input[type='submit']:hover{
     align-items: center;
     gap: .5em;
 }
+.contact-option div:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+}
+
 .contact-option div:nth-child(2){
     display: flex;
     gap: 1em;

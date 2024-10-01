@@ -18,15 +18,15 @@ copyBtn = document.getElementById('copyBtn');
 function copyFunc(){
     textToCopy = document.getElementById('textToCopy').value;
     cpyResult = document.querySelector('.copied')
-    
+    copyBtnContent = copyBtn.innerHTML;
     
     navigator.clipboard.writeText(textToCopy).then(() => {
         //show message when copying is successful
-        cpyResult.innerHTML = '<i style="font-size: .8em; font-weight:bold;">Copied!</i>';
+        copyBtn.innerHTML = '<i style="font-size: .8em; font-weight:bold;">Copied!</i>';
                 
         // Revert back to the original  after 2 seconds
         setTimeout(() => {
-            cpyResult.innerHTML = ''
+            copyBtn.innerHTML = copyBtnContent;
         }, 2000);
     }).catch(err => {
         // if an error occurs
