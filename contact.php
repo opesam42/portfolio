@@ -21,7 +21,7 @@ if( isset($_POST['submit']) ){
 ?>
 
 <main class="md">
-    <form action="" method="post">
+    <form action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post">
         <h3>Send a Message</h3>
         <label for="userName">Name<br>
             <input type="text" name="userName" required>

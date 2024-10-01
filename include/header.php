@@ -18,7 +18,7 @@
 
     
     <!--main styles-->
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="<?php echo $config_basedir?>styles/main.css" rel="stylesheet">
 
     
 
@@ -32,8 +32,8 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
 
         <?php
-        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'contact.php' ) {
-            echo "<link rel='stylesheet' href='styles/proj.css' />";
+        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'contact.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'index.php' ) {
+            echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' />";
         }
         ?>
 </head>
@@ -41,13 +41,13 @@
         <section class="header-hero">
             <header>
                 <a href="<?php echo $config_basedir?>" class="logo">
-                    <img src="assets/display-pic1.png">
+                    <img src="<?php echo $config_basedir?>assets/display-pic1.png">
                     <span>Gbenga Opeyemi</span>
                 </a>
                 <nav>
                     <div class="mobile-header">
                         <a href="<?php echo $config_basedir?>" class="logo">
-                            <img src="assets/display-pic1.png">
+                            <img src="<?php echo $config_basedir?>assets/display-pic1.png">
                             <span>Gbenga Opeyemi</span>
                         </a>
                         <div class="toggle-bar close"><i class="fa-lg fa fa-close"></i></div>

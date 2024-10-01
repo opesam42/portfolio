@@ -140,6 +140,6 @@ require('config.php');
         ?>
 
 
-    <script src="scripts/script.js"  type="text/javascript"></script>
+    <!-- <script src="scripts/script.js"  type="text/javascript"></script> -->
 </body>
 </html>
