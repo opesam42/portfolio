@@ -22,7 +22,7 @@ require('header.php');
     <section class="contact-option">
         <div>
             <a class="" href="mailto:opesam42@gmail.com"><i class="fa fa-regular fa-envelope"></i> <strong>opesam42@gmail.com</strong></a>
-            <input id="textToCopy" type="text" value="opesam42@gmail.com" hidden readonly /><span class="copy" id="copyBtn"><i class="fa fa-regular fa-copy fa-lg"></i></span>
+            <input id="textToCopy" type="text" value="opesam42@gmail.com" hidden readonly /><span class="copy" id="copyBtn"><i class="fa fa-regular fa-copy fa-lg" style="color: green;ss"></i></span>
         </div>
                                 
         <div>

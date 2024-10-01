@@ -22,7 +22,7 @@ function copyFunc(){
     
     navigator.clipboard.writeText(textToCopy).then(() => {
         //show message when copying is successful
-        copyBtn.innerHTML = '<i style="font-size: .8em; font-weight:bold;">Copied!</i>';
+        copyBtn.innerHTML = '<i class="fa fa-lg fa-check" style="color:green"></i>';
                 
         // Revert back to the original  after 2 seconds
         setTimeout(() => {
