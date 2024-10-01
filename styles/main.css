@@ -1,7 +1,10 @@
 :root{
     --primary-color: #127FE4;
     --sub-black: #1E1E1E;
+    --sub-shade-black: #444444;
     --sub-white: #FFFAFA;
+
+    --transition1: all 0.4s ease-in;
 }
 *{
     box-sizing: border-box;
@@ -36,11 +39,11 @@ h2{
     font-size: 1.8em;
     margin: 0;
 }
-h3, .lg{
+h3{
     font-size: 1.5em;
     margin: 0;
 }
-h4{
+h4, .lg{
     font-size: 1.3em;
 }
 a{
@@ -269,12 +272,7 @@ header .cta:hover{
     font-family: inherit;
 }
 /* Remove hover and focus effects */
-#textToCopy:hover,
-#textToCopy:focus {
-    outline: none;
-    border: none;
-    box-shadow: none;
-}
+
 .hero-section .cta span i::before{
     color: var(--sub-white);
 }
