@@ -118,6 +118,7 @@ input.errorInput, textarea.errorInput{
     transition: var(--transition1);
 }
 .error{
+    font-size: .8em;
     color: red;
     transition: var(--transition1);
 }

@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
     exit();
 }
 
-require('header.php')
+require('include/header.php')
 ?>
 
 
@@ -49,5 +49,5 @@ require('header.php')
 </main>
 
 <?php
-require('footer.php');
+require('include/footer.php');
 ?>

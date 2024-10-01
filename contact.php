@@ -1,22 +1,38 @@
 <?php
 require('config.php');
 
-require('header.php');
+$db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
+
+if( isset($_POST['submit']) ){
+    $name = mysqli_real_escape_string($db, $_POST['userName']);
+    $email = mysqli_real_escape_string($db, $_POST['userEmail']);
+    $message = mysqli_real_escape_string($db, $_POST['message']);
+
+    $sql = "INSERT INTO client_message(date_sent, name, email, message) VALUES(NOW(), '$name', '$email', '$message');";
+    mysqli_query($db, $sql);
+
+    // redirect user after submission
+    header("Location: " . $config_basedir . "contact.php");
+    exit();
+
+}else{
+    require('include/header.php');
+}
 ?>
 
 <main class="md">
     <form action="" method="post">
         <h3>Send a Message</h3>
         <label for="userName">Name<br>
-            <input type="text" name="userName">
+            <input type="text" name="userName" required>
         </label>
         <label for="userEmail">Email<br>
-            <input type="userEmail" name="userEmail">
+            <input type="userEmail" name="userEmail" required>
         </label>
         <label for="message">Message<br>
             <textarea type="text" name="message" rows="7"></textarea>
         </label>
-        <input type="submit" name="submit" value="Send message">
+        <input type="submit" name="submit" value="Send message" required>
     </form>
 
     <section class="contact-option">
@@ -36,5 +52,5 @@ require('header.php');
 <script src="scripts/form.js"></script>
 
 <?php
-require('footer.php');
+require('include/footer.php');
 ?>
