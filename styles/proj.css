@@ -94,11 +94,10 @@ input, textarea{
     resize: none;
     outline: none;
 }
-input:hover, input:focus, textarea:hover, textarea:focus{
+input:focus, textarea:focus{
     border-color: var(--primary-color);
     transition: var(--transition1)
 }
-
 
 textarea{
     height: 6em;
@@ -114,6 +113,15 @@ input[type='submit']:hover{
     border: .1em solid var(--primary-color);
     transition: var(--transition1);
 }
+input.errorInput, textarea.errorInput{
+    border-color: red;
+    transition: var(--transition1);
+}
+.error{
+    color: red;
+    transition: var(--transition1);
+}
+
 
 .contact-option{
     width: 80%;
