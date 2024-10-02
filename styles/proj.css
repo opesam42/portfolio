@@ -31,7 +31,7 @@ nav a:hover{
     height: auto;
 }
 main{
-    /* width: %;   */
+    width: 100%;
     max-width: 800px;
     padding: 0 5%;
     display: flex;
@@ -40,15 +40,32 @@ main{
     align-items: center;
     font-size: 1.1em;
 }
-@media screen and (min-width: 550px) {
-    main{
-        font-size: 1.2em;
+main.md{
+    width: 100%;
+    font-size: 1em;
+    gap: 2em;
+    align-items: center;
+    max-width: 400px;
+}
+main.contact{
+    width: 100%;
+    gap: 2em;
+}
+@media screen and (min-width: 750px) {
+    main.contact{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .contact-option{
+        border-left: 1px solid var(--sub-shade-black);
+        align-self: stretch;
+        padding-left: 1em;
     }
 }
-@media screen and (min-width:750px){
-    main{
-        padding: 0;
-        width: 60%;
+@media screen and (min-width: 550px) {
+    main.proj{
+        font-size: 1.2em;
     }
 }
 
@@ -65,15 +82,11 @@ p{
 }
 
 
-main.md{
-    width: 100%;
-    font-size: 1em;
-    gap: 2em;
-    align-items: center;
-    max-width: 400px;
-}
+
+
 form{
     width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -125,31 +138,41 @@ input.errorInput, textarea.errorInput{
 
 
 .contact-option{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     gap: .5em;
 }
-.contact-option div:first-child{
+.icon-svg path {
+    fill: var(--primary-color);
+  }
+  
+.icon-svg:hover path {
+    fill: var(--sub-black); /* New fill color on hover (red in this case) */
+  }
+
+.copy-svg{
+    color: var(--primary-color);
+}
+/* .contact-option div:first-child{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: .3em;
-}
+} */
 
 .contact-option div:nth-child(2){
     display: flex;
-    gap: 1em;
+    gap: .2em;
 }
 main a{
-    color: var(--sub-shade-black);
     transition: var(--transition1)
 }
    
 main a:hover{
-    color: var(--primary-color);
+    color: var(--sub-shade-black);
     transition: var(--transition1)
 }
 

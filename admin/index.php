@@ -33,6 +33,7 @@ if( isset($_POST['submit']) ){
 ?>
 
 <main class="md">
+    <!-- if  session is on - no need to show the login form -->
 <?php if(!isset($_SESSION['USERID'])){ ?>
     <form action="" method="POST">
         <h3>Login</h3>
@@ -54,16 +55,47 @@ if( isset($_POST['submit']) ){
 <!-- end if statement -->
 <?php
 } else{
+
+    echo "<h3>Your Projects</h3>";
+    echo "<div><a href='add.php'>Add Project</a></div>";
+
+    $projSql = "SELECT * FROM case_studies;";
+    $projResult = mysqli_query($db, $projSql);
+    $projNumRow = mysqli_num_rows($projResult);
+    
+    if($projNumRow > 0){
+        echo "<table border=1>";
+        echo "<tr>";
+            echo "<th>Title</th>";
+            echo "<th>Date Posted</th>";
+            echo "<th>Date Modified</th>";
+            echo "<th>Action</th>";
+        echo "</tr>";
+        while($projRow = mysqli_fetch_assoc($projResult)){
+            echo "<tr>";
+                echo "<td>" . $projRow['title'] . "</td>";
+                echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_posted'])) . "</td>";
+                echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_modified'])). "</td>";
+                echo "<td>";
+                    echo "<a href='edit.php?id=" . $projRow['id'] . "'>Edit</a>";
+                    echo "<a href='delete.php?id=" . $projRow['id'] . "'>Delete</a>";
+                echo "</td>";
+                
+            echo "</tr>";
+            
+        }
+        echo "</table>";
+    }
+
 ?>
 
-<p>Logged in</p>
 
 <?php
 }
 ?>
 </main>
 
-
+ 
 <?php
 require('../include/footer.php');
-?>
+?> 

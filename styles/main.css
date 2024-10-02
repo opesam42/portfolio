@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Open Sans Condensed Bold";
+    src: url('../fonts/OpenSans_Condensed-Bold.ttf');
+}
+@font-face {
+    font-family: "Open Sans Condensed ExtraBold";
+    src: url('../fonts/OpenSans_Condensed-ExtraBold.ttf');
+}
+
 :root{
     --primary-color: #127FE4;
     --sub-black: #1E1E1E;
@@ -34,14 +43,17 @@ body{
 h1{
     font-size: 2em;
     margin: 0;
+    font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
 }
 h2{
     font-size: 1.8em;
     margin: 0;
+    font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
 }
 h3{
     font-size: 1.5em;
     margin: 0;
+    font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
 }
 h4, .lg{
     font-size: 1.3em;
@@ -50,7 +62,10 @@ a{
     text-decoration: none;
     color: var(--sub-black);
 }
-br{
+main a{
+    color: var(--primary-color);
+}
+form br{
     display: none;
 }
 .header-hero{
@@ -98,8 +113,7 @@ header a{
     
 }
 footer{
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
     background-color: var(--primary-color);
     width: 100%;
     padding: 2rem 1.5em;

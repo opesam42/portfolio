@@ -20,7 +20,7 @@ require('include/header.php')
 ?>
 
 
-<main>
+<main  class="proj">
     
     <?php
         $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);

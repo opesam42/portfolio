@@ -49,7 +49,7 @@ require('config.php');
 
             <section class="hero-section">
                 <div class="title">Hi, I Am Gbenga Opeyemi</div>
-                <div class="sub-title"><strong>UI/UX Designer | Web Developer</strong> <br>Focused on <em>Purpose Driven Design</em></div>
+                <div class="sub-title"><strong>UI/UX Designer | Web Developer</strong> <br>Focused on <em>MINIMALISTIC and VALUE Driven Design</em></div>
 
                 <a class="cta" href="#">Let's Connect</a>
                 

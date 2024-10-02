@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require('../config.php');
 
 $validproj = null; // initialize to prevent error
 
@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     }
 } else{
     // if no id is provided, place a blank form for adding new project
-    header("Location: " . $config_basedir . "add.php");
+    header("Location: " . $config_basedir . "admin/add.php");
 }
 
 
@@ -32,7 +32,7 @@ if(isset($_GET['id'])){
         mysqli_query($db, $sql);
         header("Location: " . $config_basedir . "project.php?id=" . $validproj);
     } else{
-        require('header.php');
+        require('../include/header.php');
     }
     
 
@@ -63,8 +63,8 @@ $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 </form>
 
 
-<script src="scripts/quill.js"></script>
+<script src="../scripts/quill.js"></script>
 
 <?php
-require('footer.php');
+require('../include/footer.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-require('config.php');
+require('../config.php');
 
 
 
@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
     mysqli_query($db, $sql);
     header("Location: " . $config_basedir);
 } else{
-    require('header.php');
+    require('../include/header.php');
 }
 
 ?>
@@ -35,8 +35,8 @@ if(isset($_POST['submit'])){
 </form>
 
 
-<script src="scripts/quill.js"></script>
+<script src="../scripts/quill.js"></script>
 
 <?php
-require('footer.php');
+require('../include/footer.php');
 ?>
