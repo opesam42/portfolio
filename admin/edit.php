@@ -45,7 +45,11 @@ $num_row = mysqli_num_rows($result);
 
 $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 
+if ( basename($_SERVER['PHP_SELF']) == 'edit.php' ){
+    echo "yes";
+};
 ?>
+
 
 <form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="post">
     <input type="hidden" name="validproj" value="<?php echo $validproj; ?>">

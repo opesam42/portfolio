@@ -1,55 +1,13 @@
 <?php
 require('config.php');
+
+require('include/header.php');
 ?>
-
-<!-- Add sticky header -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gbenga Opeyemi - UX and Web Designer</title>
-
-    <!-- add tailwind css -->
-    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-    <!--font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <!-- font awesome -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!--main styles-->
-    <link href="styles/main.css" rel="stylesheet">
-</head>
-<body>
-        <section class="header-hero">
-        <header>
-                <a href="<?php echo $config_basedir?>" class="logo">
-                    <img src="assets/display-pic1.png">
-                    <span>Gbenga Opeyemi</span>
-                </a>
-                <nav>
-                    <div class="mobile-header">
-                        <a href="<?php echo $config_basedir?>" class="logo">
-                            <img src="assets/display-pic1.png">
-                            <span>Gbenga Opeyemi</span>
-                        </a>
-                        <div class="toggle-bar close"><i class="fa-lg fa fa-close"></i></div>
-                    </div>
-                    <!-- <div class="main-nav"> -->
-                        <a href="<?php echo $config_basedir?>">Home</a>
-                        <a href="<?php echo $config_basedir . 'resume.php'?>">Resume</a>
-                        <a href="<?php echo $config_basedir . 'contact.php'?>">Contact</a>
-                    <!-- </div> -->
-                </nav>
-                <div class="toggle-bar open"><i class="fa-lg fa fa-bars"></i></div>
-            </header>
-
-            <section class="hero-section">
+        <section class="hero-section">
+            
                 <div class="title">Hi, I Am Gbenga Opeyemi</div>
-                <div class="sub-title"><strong>UI/UX Designer | Web Developer</strong> <br>Focused on <em>MINIMALISTIC and VALUE Driven Design</em></div>
+                <div class="sub-title">A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
+                <!-- <div class="sub-title"><strong>UI/UX Designer | Web Developer</strong> <br>Focused on <em>MINIMALISTIC and VALUE Driven Design</em></div> -->
 
                 <a class="cta" href="#">Let's Connect</a>
                 
@@ -63,8 +21,6 @@ require('config.php');
                     <img src="assets/php-icon.svg" alt="php" width="48px">
 
                 </div> -->
-            </section>
-
         </section>
 
         <section class="case-studies">

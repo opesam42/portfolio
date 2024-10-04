@@ -1,4 +1,8 @@
+<aside>
+    <a class="cta" href="#">Let's Connect</a>
+</aside>
 <footer>
+           
             <!-- <a class="cta" href="#"><strong>opesam42@gmail.com</strong><span class="copy">copy</span></a> -->
             <section class="main">
                 <nav class="social">

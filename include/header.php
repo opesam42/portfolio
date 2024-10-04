@@ -16,12 +16,6 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-    <!--main styles-->
-    <link href="<?php echo $config_basedir?>styles/main.css" rel="stylesheet">
-
-    
-
         <?php
         // Conditional check to include Quill.js only on add and edit page
         if (strtolower( basename($_SERVER['PHP_SELF']) ) == 'add.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'edit.php') {
@@ -32,13 +26,20 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
 
         <?php
-        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'contact.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'index.php' ) {
-            echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' />";
+        } else if( strtolower( basename($_SERVER['PHP_SELF']) ) == 'project.php' 
+        || strtolower( basename($_SERVER['PHP_SELF']) ) == 'contact.php' 
+        || basename($_SERVER['PHP_SELF']) == 'edit.php' ) {
+            echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
         }
+        if ( basename($_SERVER['PHP_SELF']) == 'edit.php' ){
+            echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
+        };
         ?>
+        <!--main styles-->
+        <link href="<?php echo $config_basedir?>styles/main.css" rel="stylesheet">
 </head>
 <body>
-        <section class="header-hero">
+        <!-- <section class="header-hero"> -->
             <header>
                 <a href="<?php echo $config_basedir?>" class="logo">
                     <img src="<?php echo $config_basedir?>assets/display-pic1.png">
@@ -61,4 +62,4 @@
                 <div class="toggle-bar open"><i class="fa-lg fa fa-bars"></i></div>
             </header>
 
-        </section>
+        <!-- </section> -->

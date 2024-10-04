@@ -9,6 +9,7 @@
 
 :root{
     --primary-color: #127FE4;
+    --primary-shade-color: #9ab5cd;
     --sub-black: #1E1E1E;
     --sub-shade-black: #444444;
     --sub-white: #FFFAFA;
@@ -23,7 +24,7 @@
 }
 body{
     width: 100%;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Open Sans', 'DM Sans', sans-serif;
     /* font-family: 'Open Sans', sans-serif; */
     font-size: 16px;
     line-height: 1.5;
@@ -35,7 +36,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    /* gap: 2em; */
 }
 .wrapper{
     width: 100%;
@@ -68,17 +69,13 @@ main a{
 form br{
     display: none;
 }
-.header-hero{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+header, .hero-section{
     background-color: var(--primary-color);
     color: var(--sub-white);
 }
 header{
-    position: sticky;
+    /* position: sticky; */
+    background-color: var(--primary-color);
     display: flex;
     padding: 0.5rem 4rem;
     justify-content: space-between;
@@ -113,10 +110,10 @@ header a{
     
 }
 footer{
-    margin-top: auto;
+    margin-top: 3em;
     background-color: var(--primary-color);
     width: 100%;
-    padding: 2rem 1.5em;
+    padding: 2rem 4rem;
     color: var(--sub-white);
 }
 footer .main{
@@ -213,19 +210,27 @@ footer .social a {
         background-color: #F9FAFB;
     }
 
+    .hero-section.hero-section, footer{
+        padding-left: 1rem; padding-right: 1rem;
+    }
+
 }
 
 .hero-section{
+    width: 100%;
     display: flex;
-    padding: 3rem 2rem;
+    padding: 3rem 4rem;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     gap: 2.25rem;
     align-self: stretch;
-    text-align: center;
+    /* text-align: center; */
     
-    max-width: 900px;
+    /* max-width: 900px; */
     align-self: center;
+}
+.hero-section .title, .hero-section .sub-title{
+    max-width: 600px;
 }
 .hero-section .title{
     font-size: 2.5rem;
@@ -236,8 +241,20 @@ footer .social a {
     font-size: 1rem;
     font-weight: 300;
 }
+.hero-section .cta{
+    width: fit-content;
+}
+.cta:hover{
+    opacity: 70%;
+    transition: var(--transition1);
+}
+aside .cta{
+    background-color: var(--primary-color);
+    color: var(--sub-white);
+}
 .cta{
     display: flex;
+    width: fit-content;
     padding: 0.75rem;
     justify-content: center;
     align-items: center;
@@ -247,11 +264,7 @@ footer .social a {
     color: var(--primary-color);
     font-weight: bold;
 }
-.cta:hover{
-    border: .2em solid var(--sub-white);
-    background-color: transparent;
-    color: var(--sub-white);
-}
+
 header .cta{
     background-color: transparent;
     border: 2px solid var(--sub-white);
@@ -319,6 +332,7 @@ header .cta:hover{
 
     width: fit-content;
     margin: auto;
+    margin-top: 3em;
 }
 .case-studies .card-block{
     display: flex;
@@ -334,6 +348,10 @@ header .cta:hover{
 .case-studies .card{
     width: 333px;
     background-color: #FAF9F6;
+    /* box-shadow: 0px 4px 4px 0px rgba(226, 223, 223, 0.25); */
+    /* box-shadow: 0px 1px 1px 0px var(--sub-shade-black); */
+    background-color: var(--sub-shade-white);
+    border-radius: 2em;
     /* background: linear-gradient(0deg, rgba(203, 197, 197, 0.20) 0%, rgba(203, 197, 197, 0.20) 100%), #FFF; */
     display: flex;
     height: 23rem;
