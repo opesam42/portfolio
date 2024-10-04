@@ -2,6 +2,7 @@
 require('config.php');
 
 require('include/header.php');
+echo $dbpassword;
 ?>
         <section class="hero-section">
             
