@@ -1,6 +1,7 @@
 <?php
 require('../config.php');
 
+
 if(isset($_GET['id'])){
     if(!is_numeric($_GET['id']) || $_GET['id'] <= 0){
         header("Location: " . $config_basedir . "404.php");

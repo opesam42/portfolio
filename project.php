@@ -32,13 +32,15 @@ require('include/header.php')
 
         if($numrow == 0){
             //redirect them to the 404 page
-            header("Location " . $config_basedir . "404.php");
+            header("Location " . $config_basedir);
         } else{
             // echo "<p>" . $numrow . "</p>";
             $row = mysqli_fetch_assoc($result);
             echo "<section class='heading'>";
             echo "<h1>" . $row['title'] . "</h1>";
-            echo "<a href='" .$config_basedir . "admin/edit.php?id=" . $validproj . "'>Edit</a>";
+            if(isset($_SESSION['USERID'])){
+                echo "<a href='" .$config_basedir . "admin/edit.php?id=" . $validproj . "'>Edit</a>";
+            }
             // echo "<i> Posted on " . date("jS F Y", strtotime($row['date_posted'])) . ".</i>";
             echo "</section>";
             // Posted on " . date("D jS F Y g.iA", strtotime($row['dateposted'])) 

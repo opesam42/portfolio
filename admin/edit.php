@@ -45,12 +45,12 @@ $num_row = mysqli_num_rows($result);
 
 $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 
-if ( basename($_SERVER['PHP_SELF']) == 'edit.php' ){
-    echo "yes";
-};
-?>
 
 
+<?php if(!isset($_SESSION['USERID'])) {
+    header("Location: " . $config_basedir . "admin/");
+    exit();
+} else{ ?>
 <form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="post">
     <input type="hidden" name="validproj" value="<?php echo $validproj; ?>">
     <!-- add value $validproj to help pass it to the php form handler -->
@@ -68,6 +68,7 @@ if ( basename($_SERVER['PHP_SELF']) == 'edit.php' ){
 
 
 <script src="../scripts/quill.js"></script>
+<?php } ?>
 
 <?php
 require('../include/footer.php');
