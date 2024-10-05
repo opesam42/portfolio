@@ -1,4 +1,5 @@
 <?php
+require('config.php');
 // Set the target directory for uploads
 $targetDir = 'uploads/';
 
@@ -24,7 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
                 // Return the image URL in JSON format
                 $response = [
-                    'url' => 'http://localhost/projects/portfolio/' . $targetFilePath
+                    // 'url' => 'http://localhost/projects/portfolio/' . $targetFilePath;
+                    // 'url' => $config_basedir . $targetFilePath
+                    'url' => $targetFilePath
                 ];
                 header('Content-Type: application/json');
                 echo json_encode($response);

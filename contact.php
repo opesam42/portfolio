@@ -1,5 +1,6 @@
 <?php
 require('config.php');
+$headTitle = 'Contact | Gbenga Opeyemi - UX and Web Designer';
 
 $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../config.php');
+require('config.php');
 
 $validproj = null; // Initialize to prevent error
 
@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     }
 } else {
     // If no ID is provided, redirect to add new project
-    header("Location: " . $config_basedir . "admin/add.php");
+    header("Location: " . $config_basedir . "add.php");
 }
 
 // Database connection
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 
     // Check if new image is added
     if (!empty($_FILES['image']['name'])) {
-        $targetdir = "../uploads/cover/";
+        $targetdir = "uploads/cover/";
         if (!is_dir($targetdir)) {
             mkdir($targetdir, 0777, true);
         }
@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
         echo "Error updating record: " . mysqli_error($db);
     }
 } else {
-    require('../include/header.php');
+    require('include/header.php');
 }
 
 // Retrieving project information from the database
@@ -85,7 +85,7 @@ $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 if (isset($_SESSION['USERID'])) {
 ?>
 
-<form action="<?php echo $_SERVER['SCRIPT_NAME'] . "?id=" . $validproj; ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo $_SERVER['SCRIPT_NAME'] . "?id=" . $validproj; ?>" method="post" enctype="multipart/form-data" class="ckeditor_form">
     <input type="hidden" name="validproj" value="<?php echo $validproj; ?>">
     
     <label for="title"> Title<br>
@@ -94,7 +94,7 @@ if (isset($_SESSION['USERID'])) {
     
     <?php if ($row['cover_image']) { ?>
         <label for="current_image">Current Cover Image <br>
-            <img src="<?php echo "../uploads/cover/" . htmlspecialchars($row['cover_image']); ?>" alt="Cover Image" style="width:200px; height:auto;">
+            <img src="<?php echo "uploads/cover/" . htmlspecialchars($row['cover_image']); ?>" alt="Cover Image" style="width:200px; height:auto;">
         </label><br>
     <?php } ?>
     
@@ -116,7 +116,7 @@ if (isset($_SESSION['USERID'])) {
 <script>
     var configBaseDir = '<?php echo $config_basedir; ?>';
 </script>
-<script src="../scripts/ckeditor.js"></script>
+<script src="scripts/ckeditor.js"></script>
 
 <?php
 } else {
@@ -124,5 +124,5 @@ if (isset($_SESSION['USERID'])) {
     exit();
 }
 
-require('../include/footer.php');
+require('include/footer.php');
 ?>

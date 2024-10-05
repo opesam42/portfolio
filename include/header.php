@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php 
+        if( strtolower(basename($_SERVER['PHP_SELF'])) != 'project.php' ){ ?>
+            <meta name="description" content="Gbenga Opeyemi is a UI/UX designer and junior web developer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.">
+    <?php
+        }else{
+            echo "<meta name='description' content='" .$metaDescr . "'>";
+        } 
+    ?>
+    <meta name="keywords" content="UI, UX, Web Designer, Web Developer, Portfolio, Gbenga, Opeyemi">
+    <meta name="author" content="Gbenga Opeyemi">
+    <meta name="robots" content="index, follow">
+
     <title><?php echo $headTitle; ?></title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 
     <!-- add tailwind css -->
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
@@ -42,7 +55,7 @@
         <!-- <section class="header-hero"> -->
             <header>
                 <a href="<?php echo $config_basedir?>" class="logo">
-                    <img src="<?php echo $config_basedir?>assets/display-pic1.png">
+                    <img src="<?php echo $config_basedir?>assets/dp.png" width="32px">
                     <span>Gbenga Opeyemi</span>
                 </a>
                 <nav>

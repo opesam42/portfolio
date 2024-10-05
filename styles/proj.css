@@ -115,6 +115,7 @@ form{
     align-self: flex-start;
 }
 
+
 label{
     display: block;
 }
@@ -201,4 +202,10 @@ main a:hover{
 #copyBtn {
     cursor: pointer;
     color: black;
+}
+form br{
+    display: none;
+}
+.ckeditor_form br{
+    display: block;
 }

@@ -6,22 +6,25 @@ $headTitle = 'Gbenga Opeyemi - UX and Web Designer';
 require('include/header.php');
 ?>
         <section class="hero-section">
-            
+            <div class="main">
                 <div class="title">Hi, I Am Gbenga Opeyemi</div>
-                <div class="sub-title"><strong>A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</strong></div>
+                <div class="sub-title">A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
 
                 <a class="cta" href="<?php echo $config_basedir . "/contact.php" ?>">Let's Connect</a>
                 
-                
-                <!-- <div class="tools">
+                <div class="tools">
                     <img src="assets/devicon_figma.svg" alt="figma" width="48px">
                     <img src="assets/html-icon.svg" alt="html" width="48px">
                     <img src="assets/css-icon.svg" alt="css" width="48px">
                     <img src="assets/js-icon.svg"  alt="js" width="48px">
-                    <img src="assets/django-icon.svg" alt="django" width="48px">
+                    <!-- <img src="assets/django-icon.svg" alt="django" width="48px"> -->
                     <img src="assets/php-icon.svg" alt="php" width="48px">
+                </div> 
+            </div>
 
-                </div> -->
+            <div class="hero-image">
+                <img src="assets/profile.png" width="40%">
+            </div>
         </section>
 
         <section class="case-studies">
@@ -49,6 +52,7 @@ require('include/header.php');
         ?>
     </div>
 </section>
+
 
         <?php
             require('include/footer.php');

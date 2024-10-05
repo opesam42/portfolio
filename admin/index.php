@@ -77,7 +77,8 @@ if( isset($_POST['submit']) ){
                 echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_posted'])) . "</td>";
                 echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_modified'])). "</td>";
                 echo "<td>";
-                    echo "<a href='edit.php?id=" . $projRow['id'] . "'>Edit</a>";
+                    echo "<a href='../edit.php?id=" . $projRow['id'] . "'>Edit</a>";
+                    echo "<a href='../project.php?id=" . $projRow['id'] . "'>Read</a>";
                     echo "<a href='delete.php?id=" . $projRow['id'] . "'>Delete</a>";
                 echo "</td>";
                 

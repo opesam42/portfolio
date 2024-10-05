@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../config.php');
+require('config.php');
 
 
 
@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $image = '';
 
     //image uploading
-    $targetdir = "../uploads/cover/";
+    $targetdir = "uploads/cover/";
     if (!is_dir($targetdir)) {
         mkdir($targetdir, 0777, true); 
     }
@@ -42,12 +42,12 @@ if(isset($_POST['submit'])){
     }
     
 } else{
-    require('../include/header.php');
+    require('include/header.php');
 }
 
 ?>
 
-<form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="post" enctype="multipart/form-data" class="ckeditor_form">
     <label for="title"> Title<br>
         <input type="text" name="title">
     </label><br>
@@ -66,8 +66,8 @@ if(isset($_POST['submit'])){
 <script>
     var configBaseDir = '<?php echo $config_basedir; ?>';
 </script>
-<script src="../scripts/ckeditor.js"></script>
+<script src="scripts/ckeditor.js"></script>
 
 <?php
-require('../include/footer.php');
+require('include/footer.php');
 ?>

@@ -27,6 +27,7 @@ if(isset($_GET['id'])){
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_assoc($result);
         $headTitle = $row['title'];
+        $metaDescr = $row['description'];
 }
 require('include/header.php');
 ?>
@@ -51,12 +52,10 @@ require('include/header.php');
             echo "<section class='heading'>";
             echo "<h1>" . $row['title'] . "</h1>";
             if(isset($_SESSION['USERID'])){
-                echo "<a href='" .$config_basedir . "admin/edit.php?id=" . $validproj . "'>Edit</a>";
+                echo "<a href='" .$config_basedir . "edit.php?id=" . $validproj . "'>Edit</a>";
             }
-            // echo "<i> Posted on " . date("jS F Y", strtotime($row['date_posted'])) . ".</i>";
+            echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for" . $row['title'] . "' loading='lazy' width='70%'>";
             echo "</section>";
-            // Posted on " . date("D jS F Y g.iA", strtotime($row['dateposted'])) 
-            // echo "<p>". preg_replace('/\n+/', "</p><p>", trim( htmlspecialchars($row['content']))) . "</p>"; 
             echo "<section id='post'>" . $row['content'] . "</section>";
         }
     ?>

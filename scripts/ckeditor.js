@@ -58,4 +58,4 @@ ClassicEditor
         console.error('There was an error initializing the editor:', error);
     });
 
-    console.log(configBaseDir + 'upload_image.php')
+    console.log(configBaseDir + 'upload_image.php');

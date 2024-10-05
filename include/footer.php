@@ -1,6 +1,12 @@
+<?php
+if( strtolower(basename($_SERVER['PHP_SELF'])) != 'contact.php'){
+?>
 <aside>
     <a class="cta" href="<?php echo $config_basedir . "/contact.php" ?>">Let's Connect</a>
 </aside>
+<?php
+}
+?>
 <footer>
            
             <!-- <a class="cta" href="#"><strong>opesam42@gmail.com</strong><span class="copy">copy</span></a> -->

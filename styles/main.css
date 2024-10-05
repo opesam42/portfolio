@@ -9,7 +9,7 @@
 
 :root{
     --primary-color: #127FE4;
-    --primary-shade-color: #9ab5cd;
+    --primary-shade-color: #127ee412;
     --sub-black: #1E1E1E;
     --sub-shade-black: #444444;
     --sub-white: #FFFAFA;
@@ -66,9 +66,7 @@ a{
 main a{
     color: var(--primary-color);
 }
-form br{
-    display: none;
-}
+
 header, .hero-section{
     background-color: var(--primary-color);
     color: var(--sub-white);
@@ -219,13 +217,25 @@ footer .social a {
 
 }
 
-.hero-section{
+.hero-section .main{
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+.hero-image{
+    width: 30%;
+}
+.hero-image img{
+    display: block;
+    width: 100%;
+}
+
+.hero-section {
     width: 100%;
     display: flex;
     padding: 3rem 4rem;
-    flex-direction: column;
     /* align-items: center; */
-    gap: 2.25rem;
+    justify-content: space-between;
     align-self: stretch;
     /* text-align: center; */
     
@@ -351,6 +361,8 @@ header .cta:hover{
 .case-studies .card article{
     width: 333px;
     background-color: #FAF9F6;
+    /* border: .2em solid #3f969866; */
+    border: .2em solid var(--primary-shade-color);
     /* box-shadow: 0px 4px 4px 0px rgba(226, 223, 223, 0.25); */
     /* box-shadow: 0px 1px 1px 0px var(--sub-shade-black); */
     background-color: var(--sub-shade-white);
@@ -359,12 +371,15 @@ header .cta:hover{
     display: flex;
     height: 23rem;
     flex-direction: column;
-    padding: 0rem 1rem 1rem 1rem;
+    padding: .5rem 1rem 1rem 1rem;
     align-items: center;
     justify-content: flex-start;
     gap: .2rem;
-    align-self: stretch;
-
+    align-self: stretch; 
+}
+.case-studies .card article p.descr{
+    margin: 0;
+    font-size: .8em;
     
 }
 .case-studies .card .thumbnail{
@@ -380,11 +395,15 @@ header .cta:hover{
     width: 100%;
     /* height: 13rem !important; */
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     position: absolute;
     top:0; left: 0;
+    transition: var(--transition1);
 }
-
+.case-studies article:hover img {
+    transform: scale(1.1);
+    transition: var(--transition1);
+}
 .case-studies .img-wrapper{
     display: flex;
     width: 100%;
@@ -430,11 +449,22 @@ header .cta:hover{
     background-color: aliceblue;
 }
 
-@media screen and (min-width: 999px){
-    .case-studies .card{
-        /* width: 30rem; */
+@media screen and (max-width: 999px){
+    
+    .hero-section{
+        flex-direction: column;
+    }
+    .hero-section .main{
+        order: 1;
+    }
+    .hero-section .hero-image{
+        width: 40%;
+        max-width: 200px;
+        order: 0;
+        /* align-self: center; */
     }
 }
+
 
 
 
