@@ -2,13 +2,11 @@
 require('config.php');
 
 require('include/header.php');
-echo $dbpassword;
 ?>
         <section class="hero-section">
             
                 <div class="title">Hi, I Am Gbenga Opeyemi</div>
-                <div class="sub-title">A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
-                <!-- <div class="sub-title"><strong>UI/UX Designer | Web Developer</strong> <br>Focused on <em>MINIMALISTIC and VALUE Driven Design</em></div> -->
+                <div class="sub-title"><strong>A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</strong></div>
 
                 <a class="cta" href="#">Let's Connect</a>
                 
@@ -43,52 +41,6 @@ echo $dbpassword;
                     echo "</section>";
                 }
                 ?>
-                <a class="card" href="#">
-                    <!-- <div class="thumbnail"> -->
-                        <img src="assets/projects/zepama-thumbnail2.jpg" alt="zepama-thumbnail" loading="lazy" width="100%">
-                    <!-- </div> -->
-                    <section class="detail">
-                        <section class="proj-title"><h3>Zepama</h3></section>
-                        <section class="descr">In this project, I worked on a complete redesign of LingScar's website, focusing on improving the user interface and creating a seamless, responsive experience for car leasers.</section>
-                    </section>
-
-                    <!-- <section class="proj-link">
-                        <button ><img src="assets/figma-black-icon.svg" width="24px">Figma</a>
-                        <a href="#"><img src="assets/github-black-icon.svg" width="24px">Github</a>
-                    </section> -->
-                </a>
-
-                <a class="card" href="#">
-                    <!-- <div class="thumbnail"> -->
-                        <img src="assets/projects/zepama-thumbnail2.jpg" alt="zepama-thumbnail" loading="lazy" width="100%">
-                    <!-- </div> -->
-                    <section class="detail">
-                        <section class="proj-title"><h3>Lings-Car</h3></section>
-                        <section class="descr">In this project, I worked on a complete redesign of LingScar's website, focusing on improving the user interface and creating a seamless, responsive experience for car leasers.</section>
-                    </section>
-
-                    <!-- <section class="proj-link">
-                        <a href="#"><img src="assets/figma-black-icon.svg" width="24px">Figma</a>
-                        <a href="#"><img src="assets/github-black-icon.svg" width="24px">Github</a>
-                    </section> -->
-                </a>
-
-                <a class="card" href="#">
-                    <!-- <div class="thumbnail"> -->
-                        <img src="assets/projects/yale-thumbnail.jpg" alt="yale-thumbnail" loading="lazy" width="100%">
-                    <!-- </div> -->
-                    <section class="detail">
-                        <section class="proj-title"><h3>Yale School of Art</h3></section>
-                        <section class="descr">n this project, I worked on a complete redesign of LingScar's website, focusing on improving the user interface and creating a seamless, responsive experience for car leasers.
-                            </section>
-                    </section>
-
-                    <!-- <section class="proj-link">
-                        <a href="#"><img src="assets/figma-black-icon.svg" width="24px">Figma</a>
-                        <a href="#"><img src="assets/github-black-icon.svg" width="24px">Github</a>
-                    </section> -->
-                </a>
-
             </section>
         </section> <!--Case studies section ends here-->
 
