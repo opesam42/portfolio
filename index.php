@@ -34,7 +34,7 @@ require('include/header.php');
                 
                 while( $row = mysqli_fetch_assoc($result) ){
                     echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>
-                        <img src='assets/projects/zepama-thumbnail2.jpg' alt='zepama-thumbnail' loading='lazy' width='100%'>";
+                        <img src='uploads/cover/" . $row['cover_image'] . "' alt='" . $row['title'] . "thumbnail' loading='lazy' width='100%'>";
                     echo "<section class='detail'>";
                         echo "<section class='proj-title'> <h3>" . $row['title'] . "</h3></section>";
                         echo "<section class='descr'>" . $row['description'] . "</section>";

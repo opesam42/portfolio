@@ -31,7 +31,7 @@
         || basename($_SERVER['PHP_SELF']) == 'edit.php' ) {
             echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
         }
-        if ( basename($_SERVER['PHP_SELF']) == 'edit.php' ){
+        if ( strtolower( basename($_SERVER['PHP_SELF']) ) == 'edit.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'add.php' ){
             echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
         };
         ?>
