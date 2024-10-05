@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gbenga Opeyemi - UX and Web Designer</title>
+    <title><?php echo $headTitle; ?></title>
 
     <!-- add tailwind css -->
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->

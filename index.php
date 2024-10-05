@@ -1,6 +1,8 @@
 <?php
 require('config.php');
 
+$headTitle = 'Gbenga Opeyemi - UX and Web Designer';
+
 require('include/header.php');
 ?>
         <section class="hero-section">
@@ -8,7 +10,7 @@ require('include/header.php');
                 <div class="title">Hi, I Am Gbenga Opeyemi</div>
                 <div class="sub-title"><strong>A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</strong></div>
 
-                <a class="cta" href="#">Let's Connect</a>
+                <a class="cta" href="<?php echo $config_basedir . "/contact.php" ?>">Let's Connect</a>
                 
                 
                 <!-- <div class="tools">
@@ -23,26 +25,30 @@ require('include/header.php');
         </section>
 
         <section class="case-studies">
-            <h1 class="title-block">PROJECTS</h1>
-            <section class="card-block">
-
-                <?php
-                $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
-                $sql = "SELECT * FROM case_studies ORDER BY date_posted DESC";
-                $result = mysqli_query($db, $sql);
-                $numrow = mysqli_num_rows($result);
-                
-                while( $row = mysqli_fetch_assoc($result) ){
-                    echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>
-                        <img src='uploads/cover/" . $row['cover_image'] . "' alt='" . $row['title'] . "thumbnail' loading='lazy' width='100%'>";
-                    echo "<section class='detail'>";
-                        echo "<section class='proj-title'> <h3>" . $row['title'] . "</h3></section>";
-                        echo "<section class='descr'>" . $row['description'] . "</section>";
-                    echo "</section>";
-                }
-                ?>
-            </section>
-        </section> <!--Case studies section ends here-->
+    <h1 class="title-block">PROJECTS</h1>
+    <div class="card-block">
+        <?php
+        $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
+        $sql = "SELECT * FROM case_studies WHERE is_visible = 1 ORDER BY date_posted DESC";
+        $result = mysqli_query($db, $sql);
+        $numrow = mysqli_num_rows($result);
+        
+        while( $row = mysqli_fetch_assoc($result) ){
+            echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>";
+                echo "<article>";
+                    echo "<div class='img-wrapper'>";
+                        echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for " . $row['title'] . "' loading='lazy' width='100%'>";
+                    echo "</div>";
+                    echo "<div class='detail'>";
+                        echo "<h3 class='proj-title'>" . $row['title'] . "</h3>";
+                        echo "<p class='descr'>" . $row['description'] . "</p>";
+                    echo "</div>";
+                echo "</article>";
+            echo "</a>";
+        }
+        ?>
+    </div>
+</section>
 
         <?php
             require('include/footer.php');

@@ -80,7 +80,7 @@ main.contact{
         justify-content: space-between;
     }
     .contact-option{
-        border-left: 1px solid var(--sub-shade-black);
+        border-left: 1px solid #ccc;
         align-self: stretch;
         padding-left: 1em;
     }

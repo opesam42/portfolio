@@ -2,6 +2,7 @@
 session_start();
 require('config.php');
 
+
 //VALIDATE ID
 if(isset($_GET['id'])){
     if( !is_numeric($_GET['id']) || $_GET['id'] <=0 ){
@@ -17,7 +18,17 @@ if(isset($_GET['id'])){
     exit();
 }
 
-require('include/header.php')
+
+{
+    $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
+        $sql = "SELECT * FROM case_studies 
+        WHERE case_studies.id = " . $validproj .  
+        " ORDER BY date_posted DESC";
+        $result = mysqli_query($db, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $headTitle = $row['title'];
+}
+require('include/header.php');
 ?>
 
 
