@@ -28,9 +28,29 @@ nav a:hover{
 }
 
 /* customizing post */
+.proj .heading{
+    align-self: flex-start;
+}
+#post{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
 #post img{
-    width: 65%;
+    width: 100%;
     height: auto;
+    align-self: center;
+}
+#post p{
+    margin-bottom: .5em;
+}
+#post figure.image{
+    align-self: center;
+}
+#post figcaption{
+    font-size: .8em;
+    text-align: center;
+    font-weight: bold;
 }
 main{
     width: 100%;

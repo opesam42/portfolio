@@ -17,6 +17,6 @@
         </footer>
 
 
-    <script src="scripts/script.js"  type="text/javascript"></script>
+    <script src="<?php echo $config_basedir; ?>scripts/script.js"  type="text/javascript"></script>
 </body>
 </html>

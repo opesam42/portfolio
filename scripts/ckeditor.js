@@ -47,7 +47,7 @@ ClassicEditor
             }
         }, 
         simpleUpload: {
-            uploadUrl: 'upload_image.php', // Replace with your server URL
+            uploadUrl: configBaseDir + 'upload_image.php', // Replace with your server URLs
             headers: {
                 // Optional: Add headers such as Authorization or CSRF if required
             }
@@ -57,3 +57,5 @@ ClassicEditor
     .catch(error => {
         console.error('There was an error initializing the editor:', error);
     });
+
+    console.log(configBaseDir + 'upload_image.php')

@@ -113,6 +113,9 @@ if (isset($_SESSION['USERID'])) {
     <input type="submit" name="submit" value="Update">
 </form>
 
+<script>
+    var configBaseDir = '<?php echo $config_basedir; ?>';
+</script>
 <script src="../scripts/ckeditor.js"></script>
 
 <?php

@@ -63,7 +63,9 @@ if(isset($_POST['submit'])){
     <input type="submit" name="submit">
 </form>
 
-
+<script>
+    var configBaseDir = '<?php echo $config_basedir; ?>';
+</script>
 <script src="../scripts/ckeditor.js"></script>
 
 <?php
