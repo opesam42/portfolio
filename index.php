@@ -22,9 +22,9 @@ require('include/header.php');
                 </div> 
             </div>
 
-            <div class="hero-image">
+            <!-- <div class="hero-image">
                 <img src="assets/profile.png" width="40%">
-            </div>
+            </div> -->
         </section>
 
         <section class="case-studies">
