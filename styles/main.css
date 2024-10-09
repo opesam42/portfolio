@@ -13,6 +13,7 @@
     --sub-black: #1E1E1E;
     --sub-shade-black: #444444;
     --sub-white: #FFFAFA;
+    --accent-color: yellow;
 
     --transition1: all 0.4s ease-in;
 }
@@ -254,6 +255,34 @@ footer .social a {
     font-size: 1rem;
     font-weight: 300;
 }
+.hero-section .dot-ul{
+    /* text-decoration: underline yellow wavy; */
+    display: inline-block;
+    /* position: relative; */
+    /* Text Gradient */
+    background: linear-gradient(to right, var(--primary-color), white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+
+    background-image: linear-gradient(to right, var(--accent-color) 100%, transparent 0);
+    background-position: 0 100%;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    animation: backgroundGrow 2s forwards;
+    /* color: yellow; */
+}
+@keyframes backgroundGrow {
+    from {
+        background-size: 0% 100%;
+        
+    }
+    to {
+        background-size: 100% 100%;
+    }
+}
 .hero-section .cta{
     width: fit-content;
 }
@@ -337,15 +366,17 @@ header .cta:hover{
 
 /* case studies */
 .case-studies{
+    background: #FFF8DC;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: .8rem;
     align-self: center;
-
-    width: fit-content;
+    width: 100%;
+    /* width: fit-content; */
     margin: auto;
     margin-top: 3em;
+    padding-top: 2em; padding-bottom: 2em;
 }
 .case-studies .card-block{
     display: flex;
@@ -360,18 +391,9 @@ header .cta:hover{
 
 .case-studies .card article{
     width: 333px;
-    background-color: #FAF9F6;
-    /* border: .2em solid #3f969866; */
-    border: .2em solid var(--primary-shade-color);
-    /* box-shadow: 0px 4px 4px 0px rgba(226, 223, 223, 0.25); */
-    /* box-shadow: 0px 1px 1px 0px var(--sub-shade-black); */
-    background-color: var(--sub-shade-white);
-    border-radius: 2em;
-    /* background: linear-gradient(0deg, rgba(203, 197, 197, 0.20) 0%, rgba(203, 197, 197, 0.20) 100%), #FFF; */
     display: flex;
     height: 23rem;
     flex-direction: column;
-    padding: .5rem 1rem 1rem 1rem;
     align-items: center;
     justify-content: flex-start;
     gap: .2rem;
@@ -395,7 +417,7 @@ header .cta:hover{
     width: 100%;
     /* height: 13rem !important; */
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     position: absolute;
     top:0; left: 0;
     transition: var(--transition1);

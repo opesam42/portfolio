@@ -7,8 +7,8 @@ require('include/header.php');
 ?>
         <section class="hero-section">
             <div class="main">
-                <div class="title">Hi, I Am Gbenga Opeyemi</div>
-                <div class="sub-title">A Junior Web Developer and UX/UI Designer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
+                <div class="title">Hi, I'm <span class="dot-ul">Gbenga Opeyemi</span></div>
+                <div class="sub-title">A <strong style="color:yellow; font-weight:500;">Junior Web Developer and UX/UI Designer</strong>. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
 
                 <a class="cta" href="<?php echo $config_basedir . "/contact.php" ?>">Let's Connect</a>
                 

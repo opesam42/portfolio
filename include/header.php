@@ -61,7 +61,7 @@
                 <nav>
                     <div class="mobile-header">
                         <a href="<?php echo $config_basedir?>" class="logo">
-                            <img src="<?php echo $config_basedir?>assets/display-pic1.png">
+                            <img src="<?php echo $config_basedir?>assets/dp.png" width="32px">
                             <span>Gbenga Opeyemi</span>
                         </a>
                         <div class="toggle-bar close"><i class="fa-lg fa fa-close"></i></div>

@@ -26,7 +26,7 @@ if(isset($_GET['id'])){
         " ORDER BY date_posted DESC";
         $result = mysqli_query($db, $sql);
         $row = mysqli_fetch_assoc($result);
-        $headTitle = $row['title'];
+        $headTitle = $row['title'] . " | Case Study";
         $metaDescr = $row['description'];
 }
 require('include/header.php');
@@ -50,11 +50,12 @@ require('include/header.php');
             // echo "<p>" . $numrow . "</p>";
             $row = mysqli_fetch_assoc($result);
             echo "<section class='heading'>";
+            echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for" . $row['title'] . "' loading='lazy' width='100%' style='display:block'>";
             echo "<h1>" . $row['title'] . "</h1>";
             if(isset($_SESSION['USERID'])){
                 echo "<a href='" .$config_basedir . "edit.php?id=" . $validproj . "'>Edit</a>";
             }
-            echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for" . $row['title'] . "' loading='lazy' width='70%'>";
+            
             echo "</section>";
             echo "<section id='post'>" . $row['content'] . "</section>";
         }
