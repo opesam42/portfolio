@@ -17,7 +17,8 @@ const {
     SimpleUploadAdapter,
     ImageEditing,
     ImageBlockEditing,
-    List, // Ensure this is correctly imported
+    List,
+    Link,
 } = CKEDITOR;
 
 ClassicEditor
@@ -27,15 +28,19 @@ ClassicEditor
             Image, // Ensure Image plugin is included
             ImageCaption, ImageResize, ImageStyle, ImageToolbar, 
             LinkImage, ImageInsert, ImageUpload, SimpleUploadAdapter, 
-            ImageEditing, ImageBlockEditing, List,
+            ImageEditing, ImageBlockEditing, List, Link,
         ],
         toolbar: [
             'heading', '|',
             'imageInsert', '|',
             'undo', 'redo', '|',
             'bold', 'italic', '|',
-            'bulletedList', 'numberedList',
+            'bulletedList', 'numberedList', '|',
+            'link',
         ],
+        link: {
+            addTargetToExternalLinks: true
+        },
         image: {
             toolbar: [
                 'imageStyle:block', 'imageStyle:side', '|',

@@ -30,6 +30,7 @@ nav a:hover{
 /* customizing post */
 .proj .heading{
     align-self: flex-start;
+    width: 100%;
 }
 .proj .ul{
     margin-bottom: .3em;
@@ -38,17 +39,28 @@ nav a:hover{
 #post{
     display: flex;
     flex-direction: column;
+    line-height: 30px;
     /* align-items: center; */
+}
+#post h3{
+    margin-top: 1rem;
+}
+#psot li{
+    margin-bottom: .6em;
 }
 #post img{
     width: 100%;
     height: auto;
     align-self: center;
 }
+img.dp{
+    width: 40% !important; 
+    display: block;   
+}
 #post p{
     margin-bottom: .5em;
-    line-height: 30px;
 }
+
 #post figure.image{
     align-self: center;
 }
@@ -99,6 +111,8 @@ main.contact{
 main h1{
     font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
     font-size: 2.5em;
+    margin-bottom: 1.5rem; margin-top: 1.5rem;
+    text-align: center;
     color: var(--primary-color);
 }
 main h2, main h3{

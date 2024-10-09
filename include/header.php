@@ -44,7 +44,7 @@
         || basename($_SERVER['PHP_SELF']) == 'edit.php' ) {
             echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
         }
-        if ( strtolower( basename($_SERVER['PHP_SELF']) ) == 'edit.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'add.php' ){
+        if ( strtolower( basename($_SERVER['PHP_SELF']) ) == 'edit.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'add.php' || strtolower( basename($_SERVER['PHP_SELF']) ) == 'about.php' ){
             echo "<link rel='stylesheet' href='" . $config_basedir . "styles/proj.css' >";
         };
         ?>
@@ -68,6 +68,7 @@
                     </div>
                     <!-- <div class="main-nav"> -->
                         <a href="<?php echo $config_basedir?>">Home</a>
+                        <a href="<?php echo $config_basedir . 'about.php'?>">About Me</a>
                         <a href="<?php echo $config_basedir . 'resume.php'?>">Resume</a>
                         <a href="<?php echo $config_basedir . 'contact.php'?>">Contact</a>
                     <!-- </div> -->

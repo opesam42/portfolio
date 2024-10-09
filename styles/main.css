@@ -100,6 +100,9 @@ header nav{
     width: 55%;
 
 }
+nav{
+    font-size: .9em;
+}
 nav a:hover{
     border-bottom: 2px solid white;
 }
@@ -221,7 +224,7 @@ footer .social a {
 .hero-section .main{
     display: flex;
     flex-direction: column;
-    gap: 2.25rem;
+    gap: 1rem;
 }
 .hero-image{
     width: 30%;
@@ -229,13 +232,27 @@ footer .social a {
 .hero-image img{
     display: block;
     width: 100%;
-}
 
+    opacity: 0;
+    transform: translateX(200%);
+    animation: slideIn 1.5s ease forwards;
+}
+/* Define the keyframes for the sliding animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .hero-section {
     width: 100%;
     display: flex;
     padding: 1rem 4rem;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-between;
     align-self: stretch;
     /* text-align: center; */
@@ -250,11 +267,13 @@ footer .social a {
     font-size: 2.5rem;
     font-size: clamp(40px, 2vw + 24px, 64px); /* for fluid typography */
     font-weight: 800;
+    line-height: 1.3;
 }
 .hero-section .sub-title{
     font-size: 1rem;
     font-weight: 300;
 }
+
 .hero-section .dot-ul{
     /* text-decoration: underline yellow wavy; */
     display: inline-block;
@@ -285,6 +304,7 @@ footer .social a {
 }
 .hero-section .cta{
     width: fit-content;
+    margin-top: 2em;
 }
 .cta:hover{
     opacity: 70%;
@@ -366,7 +386,7 @@ header .cta:hover{
 
 /* case studies */
 .case-studies{
-    background: #FFF8DC;
+    /* background: #FFF8DC; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -476,14 +496,10 @@ header .cta:hover{
     .hero-section{
         flex-direction: column;
     }
-    .hero-section .main{
-        order: 1;
-    }
     .hero-section .hero-image{
-        width: 40%;
-        max-width: 200px;
-        order: 0;
-        /* align-self: center; */
+        width: 100%;
+        max-width: 350px;
+        align-self: center;
     }
 }
 
