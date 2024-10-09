@@ -34,6 +34,7 @@ nav a:hover{
 .proj .ul{
     margin-bottom: .3em;
 }
+
 #post{
     display: flex;
     flex-direction: column;
@@ -46,6 +47,7 @@ nav a:hover{
 }
 #post p{
     margin-bottom: .5em;
+    line-height: 30px;
 }
 #post figure.image{
     align-self: center;
