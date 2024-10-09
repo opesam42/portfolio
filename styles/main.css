@@ -112,7 +112,7 @@ aside{
     margin-top: 3em;
 }
 footer{
-    margin-top: 1em;
+    margin-top: 3em;
     background-color: var(--primary-color);
     width: 100%;
     padding: 2rem 4rem;
@@ -234,7 +234,7 @@ footer .social a {
 .hero-section {
     width: 100%;
     display: flex;
-    padding: 3rem 4rem;
+    padding: 1rem 4rem;
     /* align-items: center; */
     justify-content: space-between;
     align-self: stretch;
@@ -401,7 +401,7 @@ header .cta:hover{
 }
 .case-studies .card article p.descr{
     margin: 0;
-    font-size: .8em;
+    font-size: .9em;
     
 }
 .case-studies .card .thumbnail{

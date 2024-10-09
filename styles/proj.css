@@ -31,6 +31,9 @@ nav a:hover{
 .proj .heading{
     align-self: flex-start;
 }
+.proj .ul{
+    margin-bottom: .3em;
+}
 #post{
     display: flex;
     flex-direction: column;

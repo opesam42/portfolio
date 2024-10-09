@@ -40,7 +40,7 @@ require('include/header.php');
             echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>";
                 echo "<article>";
                     echo "<div class='img-wrapper'>";
-                        echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for " . $row['title'] . "' loading='lazy' width='100%'>";
+                        echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for " . $row['title'] . "' width='100%'>";
                     echo "</div>";
                     echo "<div class='detail'>";
                         echo "<h3 class='proj-title'>" . $row['title'] . "</h3>";
