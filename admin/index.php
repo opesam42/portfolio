@@ -33,6 +33,7 @@ if( isset($_POST['submit']) ){
 ?>
 
 <main class="md">
+    <h1>ADMIN PANEL</h1>
     <!-- if  session is on - no need to show the login form -->
 <?php if(!isset($_SESSION['USERID'])){ ?>
     <form action="" method="POST">
@@ -76,7 +77,7 @@ if( isset($_POST['submit']) ){
                 echo "<td>" . $projRow['title'] . "</td>";
                 echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_posted'])) . "</td>";
                 echo "<td>" . date('d/m/Y h:i A', strtotime($projRow['date_modified'])). "</td>";
-                echo "<td>";
+                echo "<td style='display:flex; flex-direction:column; '>";
                     echo "<a href='../edit.php?id=" . $projRow['id'] . "'>Edit</a>";
                     echo "<a href='../project.php?id=" . $projRow['id'] . "'>Read</a>";
                     echo "<a href='delete.php?id=" . $projRow['id'] . "'>Delete</a>";

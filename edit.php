@@ -26,6 +26,11 @@ if (!$db) {
 if (isset($_POST['submit'])) {
     $title = mysqli_real_escape_string($db, $_POST['title']);
     $descr = mysqli_real_escape_string($db, $_POST['descr']);
+    $visibility = $_POST['visibility'];
+    $project_type = $_POST['proj_type'];
+    $live_site_link = mysqli_real_escape_string($db, $_POST['live_site_link']);
+    $design_link = mysqli_real_escape_string($db, $_POST['design_link']);
+    $github_link = mysqli_real_escape_string($db, $_POST['github_link']);
     $content = mysqli_real_escape_string($db, $_POST['content']);
     
     // Retrieve existing post data before checking for new image
@@ -57,7 +62,16 @@ if (isset($_POST['submit'])) {
 
     // Update post in the database
     $sql = "UPDATE case_studies 
-            SET title = '$title', date_modified = NOW(), cover_image = '$image', description = '$descr', content = '$content' 
+            SET title = '$title', 
+            date_modified = NOW(), 
+            cover_image = '$image', 
+            description = '$descr',
+            is_visible = '$visibility',
+            project_type = '$project_type', 
+            live_site_link = '$live_site_link',
+            github_link = '$github_link', 
+            design_link = '$design_link',
+            content = '$content' 
             WHERE id = " . $validproj;
 
     if (mysqli_query($db, $sql)) {
@@ -105,7 +119,28 @@ if (isset($_SESSION['USERID'])) {
     <label for="descr">Description<br>
         <textarea type="text" name="descr"><?php echo htmlspecialchars($row['description']); ?></textarea>
     </label><br>
-    
+
+    <label for="proj_type">Project type<br>
+        <input type="radio" name="proj_type" value="UI-UX" checked> UI/UX<br>
+        <input type="radio" name="proj_type" value="Web"> Web
+    </label>
+    <label for="visibility">Visibility<br>
+        <input type="radio" name="visibility" value="1" checked>Visible<br>
+        <input type="radio" name="visibility" value="0">Not Visible
+    </label>
+
+    <label for="design_link"> Design File Link<br>
+        <input type="url" name="design_link" value="<?php echo htmlspecialchars($row['design_link']); ?>">
+    </label><br>
+
+    <label for="live_site_link"> Live Site Link<br>
+        <input type="url" name="live_site_link" value="<?php echo htmlspecialchars($row['live_site_link']); ?>">
+    </label><br>
+
+    <label for="github_link"> Github Repo Link<br>
+        <input type="url" name="github_link" value="<?php echo htmlspecialchars($row['github_link']); ?>">
+    </label><br>
+
     <label for="content">Content<br>
         <textarea name="content" id="editor" width="100%"><?php echo htmlspecialchars($contentSanitized); ?></textarea>
     </label>

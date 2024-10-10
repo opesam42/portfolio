@@ -10,6 +10,11 @@ if(isset($_POST['submit'])){
     $descr = mysqli_real_escape_string($db, $_POST['descr']);
     $content = mysqli_real_escape_string($db, $_POST['content']);
     $image = '';
+    $visibility = $_POST['visibility'];
+    $project_type = $_POST['proj_type'];
+    $live_site_link = mysqli_real_escape_string($db, $_POST['live_site_link']);
+    $design_link = mysqli_real_escape_string($db, $_POST['design_link']);
+    $github_link = mysqli_real_escape_string($db, $_POST['github_link']);
 
     //image uploading
     $targetdir = "uploads/cover/";
@@ -30,9 +35,8 @@ if(isset($_POST['submit'])){
             $image = $filename;
         }
     }
-
-    $sql = "INSERT INTO case_studies(title, date_posted, description, cover_image, content)
-            VALUES('$title', NOW(), '$descr', '$image', '$content')";
+    $sql = "INSERT INTO case_studies(title, date_posted, description, cover_image, content, is_visible, project_type, live_site_link, github_link, design_link)
+            VALUES('$title', NOW(), '$descr', '$image', '$content', '$visibility', '$project_type', '$live_site_link', '$github_link', '$design_link')";
     if(mysqli_query($db, $sql)){
         $last_id = mysqli_insert_id($db);
         header("Location: " . $config_basedir . "project.php?id=" . $last_id);
@@ -56,6 +60,26 @@ if(isset($_POST['submit'])){
     </label><br>
     <label for="descr">Description<br>
         <textarea type="text" name="descr"></textarea>
+    </label><br>
+    <label for="proj_type">Project type<br>
+        <input type="radio" name="proj_type" value="UI-UX" checked> UI/UX<br>
+        <input type="radio" name="proj_type" value="Web"> Web
+    </label>
+    <label for="visibility">Visibility<br>
+        <input type="radio" name="visibility" value="1" checked>Visible<br>
+        <input type="radio" name="visibility" value="0">Not Visible
+    </label>
+
+    <label for="design_link"> Design File Link<br>
+        <input type="url" name="design_link">
+    </label><br>
+
+    <label for="live_site_link"> Live Site Link<br>
+        <input type="url" name="live_site_link">
+    </label><br>
+
+    <label for="github_link"> Github Repo Link<br>
+        <input type="url" name="github_link">
     </label><br>
     <label for="content">Content<br>
         <textarea name="content" id="editor" width="100%"></textarea>
