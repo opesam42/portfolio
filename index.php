@@ -27,31 +27,37 @@ require('include/header.php');
             </div> 
         </section>
 
-        <section class="case-studies">
-    <h1 class="title-block">PROJECTS</h1>
-    <div class="card-block">
-        <?php
-        $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
-        $sql = "SELECT * FROM case_studies WHERE is_visible = 1 ORDER BY date_posted DESC";
-        $result = mysqli_query($db, $sql);
-        $numrow = mysqli_num_rows($result);
-        
-        while( $row = mysqli_fetch_assoc($result) ){
-            echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>";
-                echo "<article>";
-                    echo "<div class='img-wrapper'>";
-                        echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for " . $row['title'] . "' width='100%'>";
-                    echo "</div>";
-                    echo "<div class='detail'>";
-                        echo "<h3 class='proj-title'>" . $row['title'] . "</h3>";
-                        echo "<p class='descr'>" . $row['description'] . "</p>";
-                    echo "</div>";
-                echo "</article>";
-            echo "</a>";
-        }
-        ?>
-    </div>
-</section>
+    <section class="case-studies">
+        <h1 class="title-block">PROJECTS</h1>
+        <div class="card-block">
+            <?php
+            $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
+            $sql = "SELECT * FROM case_studies WHERE is_visible = 1 ORDER BY date_posted DESC";
+            $result = mysqli_query($db, $sql);
+            $numrow = mysqli_num_rows($result);
+            
+            while( $row = mysqli_fetch_assoc($result) ){
+                echo "<a class='card' href='" . $config_basedir . "project.php?id=" . $row['id'] . "'>";
+                    echo "<article>";
+                        echo "<div class='img-wrapper'>";
+                            echo "<img src='uploads/cover/" . $row['cover_image'] . "' alt='Cover image for " . $row['title'] . "' width='100%'>";
+                        echo "</div>";
+                        echo "<div class='detail'>";
+                            echo "<h3 class='proj-title'>" . $row['title'] . "</h3>";
+                            if($row['project_type'] == 'UI-UX'){
+                                $tag = 'UI/UX';
+                            } else if($row['project_type'] == 'Web'){
+                                $tag = 'Web Development';
+                            }
+                            echo "<div class='tag'>" . $tag . "</div>";
+                            echo "<p class='descr'>" . $row['description'] . "</p>";
+                        echo "</div>";
+                    echo "</article>";
+                echo "</a>";
+            }
+            ?>
+        </div>
+    </section>
 
 
         <?php

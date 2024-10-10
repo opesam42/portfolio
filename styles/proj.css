@@ -32,6 +32,24 @@ nav a:hover{
     align-self: flex-start;
     width: 100%;
 }
+.proj .links{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: .5em;
+}
+.proj .links a{
+    display: block;
+    border: 1px solid var(--sub-black);
+    color: var(--sub-black);
+    border-radius: .5em;
+    padding: .5em;
+}
+.proj .links a:hover{
+    background-color: var(--sub-black);
+    color: var(--sub-white);
+    transition: var(--transition1);
+}
 .proj .ul{
     margin-bottom: .3em;
 }
@@ -52,6 +70,9 @@ nav a:hover{
     width: 100%;
     height: auto;
     align-self: center;
+}
+#post a{
+    text-decoration: underline;
 }
 img.dp{
     width: 40% !important; 

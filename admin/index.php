@@ -58,7 +58,7 @@ if( isset($_POST['submit']) ){
 } else{
 
     echo "<h3>Your Projects</h3>";
-    echo "<div><a href='add.php'>Add Project</a></div>";
+    echo "<div><a href='../add.php'>Add Project</a></div>";
 
     $projSql = "SELECT * FROM case_studies;";
     $projResult = mysqli_query($db, $projSql);

@@ -68,8 +68,8 @@
                     </div>
                     <!-- <div class="main-nav"> -->
                         <a href="<?php echo $config_basedir?>">Home</a>
-                        <a href="<?php echo $config_basedir . 'about.php'?>">About Me</a>
-                        <a href="<?php echo $config_basedir . 'resume.php'?>">Resume</a>
+                        <a href="<?php echo $config_basedir . 'about.php'?>">About</a>
+                        <!-- <a href="<?php echo $config_basedir . 'resume.php'?>">Resume</a> -->
                         <a href="<?php echo $config_basedir . 'contact.php'?>">Contact</a>
                     <!-- </div> -->
                 </nav>
