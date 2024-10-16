@@ -199,6 +199,8 @@ input[type='submit']{
     background-color: var(--primary-color);
     color: white;
     border: none;
+    font-size: inherit;
+    font-family: inherit;
 }
 input[type='submit']:hover{
     background-color: var(--sub-white);
