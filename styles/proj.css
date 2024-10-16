@@ -126,11 +126,11 @@ main.contact{
         display: block;
     }
 }
-@media screen and (min-width: 550px) {
+/* @media screen and (min-width: 550px) {
     main.proj{
-        /* font-size: 1.2em; */
+        font-size: 1.2em;
     }
-}
+} */
 
 main h1{
     font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
