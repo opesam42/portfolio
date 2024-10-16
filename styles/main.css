@@ -116,6 +116,7 @@ header a{
 }
 .social-bar{
     position: fixed;
+    z-index: 1000;
     /* top: 50%; */
     bottom: 2rem;
     left: 2rem;
