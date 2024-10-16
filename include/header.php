@@ -76,4 +76,13 @@
                 <div class="toggle-bar open"><i class="fa-lg fa fa-bars"></i></div>
             </header>
 
+            <!-- icon bar -->
+            <div class="social-bar">
+                <a href="https://www.facebook.com/ope.oluwagbemiga" target="_blank" rel="noopener noreferrer" aria-label="Visit my Facebook profile"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://github.com/opesam42" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a href="https://wa.me/+2349057339147" target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://linkedin.com/in/opeyemi-oluwagbemiga-2ba61423b" target="_blank" rel="noopener noreferrer" aria-label="Connect via LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="mailto:opesam42@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Send a mail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            </div>
+
         <!-- </section> -->

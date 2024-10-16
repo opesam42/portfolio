@@ -2,7 +2,7 @@
 if( strtolower(basename($_SERVER['PHP_SELF'])) != 'contact.php'){
 ?>
 <aside>
-    <a class="cta" href="<?php echo $config_basedir . "/contact.php" ?>">Let's Connect</a>
+    <a class="cta" href="<?php echo $config_basedir . "contact.php" ?>">Let's Connect</a>
 </aside>
 <?php
 }

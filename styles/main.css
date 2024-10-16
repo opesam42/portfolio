@@ -73,7 +73,10 @@ header, .hero-section{
     color: var(--sub-white);
 }
 header{
-    /* position: sticky; */
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
     background-color: var(--primary-color);
     display: flex;
     padding: 0.5rem 4rem;
@@ -110,6 +113,33 @@ header a{
     color: #FFF;
     display: block;
     
+}
+.social-bar{
+    position: fixed;
+    /* top: 50%; */
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    transform: translateY(-20%);
+}
+.social-bar a{
+    display: block;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em; height: 2em;
+    background-color: var(--sub-shade-black);
+    
+    color: var(--sub-white);
+}
+
+.social-bar a:hover{
+    background-color: var(--sub-white);
+    color: var(--sub-shade-black);
+    transition: var(--transition1);
 }
 aside{
     margin-top: 3em;
@@ -417,7 +447,8 @@ header .cta:hover{
     align-items: center;
     justify-content: flex-start;
     gap: .2rem;
-    align-self: stretch; 
+    align-self: stretch;
+    /* box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0px 2px 4px -1px rgba(0,0,0,.06);  */
 }
 .case-studies .card article p.descr{
     margin: 0;

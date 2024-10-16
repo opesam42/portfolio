@@ -1,5 +1,6 @@
 const visitorName = document.querySelector('input[name="userName"]');
 const visitorEmail = document.querySelector('input[name="userEmail"]');
+const visitorTel = document.querySelector('input[name="userTel"]');
 const visitorMessage = document.querySelector('textarea[name="message"]');
 const inputs = [visitorName, visitorEmail, visitorMessage];
 const submitBtn = document.querySelector('input[type="submit"]');
@@ -27,6 +28,7 @@ submitBtn.addEventListener('click', (event)=>{
         });
     
     }
+    
 
     // check for blank fields
     inputs.forEach((input)=>{
@@ -43,9 +45,20 @@ submitBtn.addEventListener('click', (event)=>{
         hasError = true;
     }
 
+    var phoneRegex = /^\+?[0-9]{10,15}$/;
+    if ((!visitorTel.value.match(phoneRegex)) && (visitorTel.value.trim() != '')) {
+        showError(visitorTel, "Enter a valid phone number (10-15 digits)");
+        hasError = true;
+    } else{
+        visitorTel.classList.remove("errorInput")
+    }
+
+    
     // check if there is error to prevent submission
     if (hasError === true) {
         event.preventDefault();
+    }else{
+        submitBtn.value = "Sending...";
     }
     
 });

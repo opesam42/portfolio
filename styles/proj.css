@@ -36,18 +36,16 @@ nav a:hover{
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    gap: .5em;
+    gap: .7em;
 }
 .proj .links a{
+    font-size: 1rem;
     display: block;
-    border: 1px solid var(--sub-black);
-    color: var(--sub-black);
+    color: var(--primary-color);
     border-radius: .5em;
-    padding: .5em;
 }
 .proj .links a:hover{
-    background-color: var(--sub-black);
-    color: var(--sub-white);
+    text-decoration: underline;
     transition: var(--transition1);
 }
 .proj .ul{
@@ -73,6 +71,7 @@ nav a:hover{
 }
 #post a{
     text-decoration: underline;
+    color: inherit;
 }
 img.dp{
     width: 40% !important; 
@@ -111,16 +110,20 @@ main.contact{
     width: 100%;
     gap: 2em;
 }
+
 @media screen and (min-width: 750px) {
     main.contact{
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
     }
     .contact-option{
         border-left: 1px solid #ccc;
         align-self: stretch;
         padding-left: 1em;
+    }
+    .contact-image.contact-image{
+        display: block;
     }
 }
 @media screen and (min-width: 550px) {
@@ -152,21 +155,29 @@ form{
     display: flex;
     flex-direction: column;
     gap: .5em;
-    align-self: flex-start;
+    /* align-self: flex-start; */
+    order: 3;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--sub-shade-black);
 }
 
 
 label{
     display: block;
 }
+.label{
+    display: inline-block;
+    margin-bottom: .3em;
+}
 input, textarea{
     width: 100%;
     padding: .5em;
     background-color: transparent;
     border: .5px solid var(--sub-black);
-    border-radius: .2em;
+    border-radius: .1em;
     font-family: inherit;
-    font-size: 1em;
+    font-size: .8em;
     resize: none;
     outline: none;
 }
@@ -193,19 +204,53 @@ input.errorInput, textarea.errorInput{
     border-color: red;
     transition: var(--transition1);
 }
+.errorMes, .success{
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    padding: .5em 1em;
+    color: white;
+
+    opacity: 0;
+    animation: showMessage 3s ease forwards;
+    /* font-weight: bold; */
+}
+@keyframes showMessage {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes hideMessage {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+.errorMes{
+    background-color: rgb(246, 219, 219);
+}
 .error{
     font-size: .8em;
     color: red;
     transition: var(--transition1);
 }
+.success{
+    font-size: .8em;
+    background-color: #70abe2;
+    
+    /* font-weight: bold; */
+}
 
 
-.contact-option{
+.contact-image{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    gap: .5em;
+    display: none;
 }
 .icon-svg path {
     fill: var(--primary-color);
