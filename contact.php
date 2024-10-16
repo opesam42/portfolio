@@ -38,7 +38,7 @@ if( isset($_POST['submit']) ){
 
         //Content
         $sanitized_message = str_replace(array("\\r", "\\n", "\r", "\n"), "<br>", $message);
-        $emailMessage = str_replace("<br><br>", "<br>", $sanitized_message);
+        $emailMessage = stripslashes( str_replace("<br><br>", "<br>", $sanitized_message) );
         $mail->isHTML(true);
         $mail->Subject = "Your message has been received";
         $mail->Body = "

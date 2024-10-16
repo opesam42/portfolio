@@ -6,17 +6,6 @@ if(file_exists(__DIR__ . '/.env')){
 }
 //Configuration variables
 
-/* $dbhost = "localhost";
-$dbuser = "root";
-$dbpassword = "";
-$dbdatabase = "portfolio"; */
-
-
-// $dbhost = "sql3.freesqldatabase.com";
-// $dbuser = "sql3735427";
-// // $dbpassword = getenv('DB_PSWD');
-// $dbpassword = 'kv9Yw7VHzi';
-// $dbdatabase = "sql3735427"; 
 $dbhost = $_ENV['DBHOST'];
 $dbuser = $_ENV['DBUSER'];
 $dbpassword = $_ENV['DBPASSWORD'];
