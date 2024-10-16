@@ -61,7 +61,7 @@ nav a:hover{
 #post h3{
     margin-top: 1rem;
 }
-#psot li{
+#post li{
     margin-bottom: .6em;
 }
 #post img{
@@ -88,6 +88,12 @@ img.dp{
     font-size: .8em;
     text-align: center;
     font-weight: bold;
+}
+@media screen and (max-width: 701px) {
+    #post h1{
+        /* reduce font of case studies main header */
+        font-size: 2.5em;
+    }
 }
 main{
     width: 100%;
