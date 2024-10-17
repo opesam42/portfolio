@@ -6,15 +6,15 @@ require('config.php');
 
 $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
 if(isset($_POST['submit'])){
-    $title = mysqli_real_escape_string($db, $_POST['title']);
-    $descr = mysqli_real_escape_string($db, $_POST['descr']);
-    $content = mysqli_real_escape_string($db, $_POST['content']);
+    $title = $_POST['title'];
+    $descr = $_POST['descr'];
+    $content = $_POST['content'];
     $image = '';
-    $visibility = $_POST['visibility'];
+    $visibility = (int)$_POST['visibility'];
     $project_type = $_POST['proj_type'];
-    $live_site_link = mysqli_real_escape_string($db, $_POST['live_site_link']);
-    $design_link = mysqli_real_escape_string($db, $_POST['design_link']);
-    $github_link = mysqli_real_escape_string($db, $_POST['github_link']);
+    $live_site_link = $_POST['live_site_link'];
+    $design_link = $_POST['design_link'];
+    $github_link = $_POST['github_link'];
 
     //image uploading
     $targetdir = "uploads/cover/";
@@ -23,27 +23,58 @@ if(isset($_POST['submit'])){
     }
     $file = $_FILES['image'];
     $filename = basename($file['name']);
+    $filename = preg_replace("/[^a-zA-Z0-9_\-\.]/", "", $filename); // Sanitize file name
     $targetFilePath = $targetdir . $filename;
 
     $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
     $allowedTypes = ['jpg', 'jpeg', 'png'];
 
-    if(in_array($fileType, $allowedTypes)){
-        //move file to target directory
-        if(move_uploaded_file($file['tmp_name'], $targetFilePath)){
-            // $image = $targetFilePath;
-            $image = $filename;
+    // Check if the uploaded file type is allowed
+    if (in_array($fileType, $allowedTypes)) {
+        // Verify MIME type to ensure it's an actual image
+        $mime = mime_content_type($file['tmp_name']);
+        $validMimeTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+        
+        if (in_array($mime, $validMimeTypes)) {
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
+                $image = $filename;
+            } else {
+                echo "Error uploading image.";
+                exit();
+            }
+        } else {
+            echo "Invalid image file type.";
+            exit();
         }
+    } else {
+        echo "File type not allowed.";
+        exit();
     }
+
     $sql = "INSERT INTO case_studies(title, date_posted, description, cover_image, content, is_visible, project_type, live_site_link, github_link, design_link)
-            VALUES('$title', NOW(), '$descr', '$image', '$content', '$visibility', '$project_type', '$live_site_link', '$github_link', '$design_link')";
-    if(mysqli_query($db, $sql)){
-        $last_id = mysqli_insert_id($db);
+            VALUES(?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?)";
+    
+    $stmt = mysqli_prepare($db, $sql);
+    if($stmt === false){
+        exit("An error occured");
+    }
+
+    // Bind the parameters (s = string, i = integer)
+    mysqli_stmt_bind_param($stmt, 'ssssisiss', $title, $descr, $image, $content, $visibility, $project_type, $live_site_link, $github_link, $design_link);
+    // Execute the statement
+    if (mysqli_stmt_execute($stmt)) {
+        $last_id = mysqli_insert_id($db); // Get the last inserted ID
         header("Location: " . $config_basedir . "project.php?id=" . $last_id);
         exit();
-    }else{
+    } else {
         echo "Error: " . mysqli_error($db);
+        exit();
     }
+
+    // Close the prepared statement
+    mysqli_stmt_close($stmt);
+
     
 } else{
     require('include/header.php');

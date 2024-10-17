@@ -114,12 +114,15 @@ header a{
     display: block;
     
 }
+
+
+
 .social-bar{
     position: fixed;
     z-index: 1000;
     /* top: 50%; */
     bottom: 2rem;
-    left: 2rem;
+    right: 2rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -250,7 +253,9 @@ footer .social a {
         padding-left: 1rem; padding-right: 1rem;
     }
 
-    /* for case studies */
+    .social-bar.social-bar{
+        right: 1rem;
+    }
     
 
 }
@@ -408,13 +413,41 @@ header .cta:hover{
     display: block;
 }
 .tools{
-    width: fit-content;
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    padding: 10px;
-    scrollbar-width: none; /*Hide Scroll Bar*/
+    justify-content: space-around;
+}
+    
+@media screen and (max-width: 700px) {
+    .tools{
+        justify-content: center;
+        row-gap: .1em;
+        column-gap: 5em;
+        flex-wrap: wrap;
+    }
+}
+
+.tools > div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tools svg{
+    width: 48px;
+    display: block;
+}
+.tools .overlay{
+    position: absolute;
+    bottom: 0;
+    font-size: .9em;
+    font-weight: bold;
+    opacity: 0;
+    transition: var(--transition1);
+}
+.tools > div:hover .overlay{
+    opacity: 1;
 }
 
 

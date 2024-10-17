@@ -8,15 +8,31 @@ use PHPMailer\PHPMailer\Exception;
 $headTitle = 'Contact | Gbenga Opeyemi - UX and Web Designer';
 
 $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbdatabase);
+if($db->connect_error){
+    exit("Error connecting to the database");
+}
 
 if( isset($_POST['submit']) ){
-    $name = mysqli_real_escape_string($db, $_POST['userName']);
-    $email = mysqli_real_escape_string($db, $_POST['userEmail']);
-    $mobile = mysqli_real_escape_string($db, $_POST['userTel']);
-    $message = mysqli_real_escape_string($db, $_POST['message']);
+    $name = trim($_POST['userName']);
+    $email = trim($_POST['userEmail']);
+    $mobile = trim($_POST['userTel']);
+    $message = trim($_POST['message']);
 
-    $sql = "INSERT INTO client_message(date_sent, name, email, mobile, message) VALUES(NOW(), '$name', '$email', '$mobile' ,'$message');";
-    mysqli_query($db, $sql);
+    //validate email
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        exit("Invalid email format");
+    }
+
+    //prepare SQL statements
+    $sql = "INSERT INTO client_message(date_sent, name, email, mobile, message) VALUES(NOW(), ?, ?, ?, ?);";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("ssss", $name, $email, $mobile, $message);
+    $stmt->execute();
+    $stmt->close();
+
+    // $sql = "INSERT INTO client_message(date_sent, name, email, mobile, message) VALUES(NOW(), '$name', '$email', '$mobile' ,'$message');";
+    // mysqli_query($db, $sql);
 
     //send email
     try{
