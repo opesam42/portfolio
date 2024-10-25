@@ -1,0 +1,10 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+
+# Rewrite for project.php
+RewriteRule ^contact contact.php [NC,L]
+# NC makes the rule non-case sensitive
+# L this is the last rule to apply.
+
+# Rewrite for about.php
+RewriteRule ^about about.php [NC,L]
