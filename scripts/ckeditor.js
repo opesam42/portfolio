@@ -52,7 +52,7 @@ ClassicEditor
             }
         }, 
         simpleUpload: {
-            uploadUrl: configBaseDir + 'upload_image.php', // Replace with your server URLs
+            uploadUrl: 'http://127.0.0.1/projects/portfolio2/public/scripts/upload_image.php', // Replace with your server URLs
             headers: {
                 // Optional: Add headers such as Authorization or CSRF if required
             }
